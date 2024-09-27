@@ -1,7 +1,30 @@
 baseURL = 'https://arbs09.de/'
-languageCode = 'en-us'
+languageCode = 'en'
+defaultContentLanguage = "en"
 title = 'arbs09 Blog'
+theme = "tailwind"
+auther = "arbs09"
+copyright = "arbs09"
 
-[module]
-  [[module.imports]]
-    path = "github.com/tomowang/hugo-theme-tailwind"
+enableRobotsTXT = true
+enableEmoji = true
+
+[markup]
+  _merge = "deep"
+
+[params]
+  # dir name of your blog content (default is `content/posts`).
+  # the list of set content will show up on your index page (baseurl).
+  contentTypeName = "posts"
+
+  [params.header]
+    logo = "logo.webp"
+
+  [params.footer]
+    since = 2024
+    poweredby = true
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"

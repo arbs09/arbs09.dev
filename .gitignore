@@ -1,0 +1,5 @@
+/puplic/
+/theme/
+.hugo_build.lock
+/resources/_gen/
+.vscode/
