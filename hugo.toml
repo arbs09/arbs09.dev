@@ -1,0 +1,7 @@
+baseURL = 'https://arbs09.de/'
+languageCode = 'en-us'
+title = 'arbs09 Blog'
+
+[module]
+  [[module.imports]]
+    path = "github.com/tomowang/hugo-theme-tailwind"
