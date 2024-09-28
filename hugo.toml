@@ -56,6 +56,11 @@ enableEmoji = true
     icon = 'brand-instagram'
     link = 'https://instagram.com/arbs09/'
 
+    [[params.social_media.items]]
+    enabled = true
+    title = 'Masterdon'
+    icon = 'brand-mastodon'
+    link = 'https://mastodon.social/@arbs'
 
 [taxonomies]
 category = "categories"
