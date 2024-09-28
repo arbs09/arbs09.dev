@@ -1,21 +1,39 @@
-baseURL = 'https://arbs09.de/'
+baseURL = 'https://arbs09.dev/'
+
 languageCode = 'en'
 defaultContentLanguage = "en"
+
 title = 'arbs09 Blog'
-theme = "tailwind"
-auther = "arbs09"
 copyright = "arbs09"
+auther = "arbs09"
+theme = "tailwind"
 
 enableRobotsTXT = true
 enableEmoji = true
 
+env = "production"
+
 [markup]
   _merge = "deep"
+  [markup.highlight]
+    noClasses = false
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.cjk]
+        enable = true
+        eastAsianLineBreaks = true
+        escapedSpace = true
+
 
 [params]
-  # dir name of your blog content (default is `content/posts`).
-  # the list of set content will show up on your index page (baseurl).
   contentTypeName = "posts"
+  jsonLD = true
+  showAuthor = true
+  [author]
+    name = "arbs09"
+    email = "hi@arbs09.dev"
 
   [params.header]
     logo = "logo.webp"
@@ -23,6 +41,20 @@ enableEmoji = true
   [params.footer]
     since = 2024
     poweredby = true
+
+  [parms.social_media]
+  [[params.social_media.items]]
+    enabled = true
+    title = 'Github'
+    icon = 'brand-github'
+    link = 'https://github.com/arbs09/'
+
+  [[params.social_media.items]]
+    enabled = true
+    title = 'Instagram'
+    icon = 'brand-instagram'
+    link = 'https://instagram.com/arbs09/'
+
 
 [taxonomies]
 category = "categories"
