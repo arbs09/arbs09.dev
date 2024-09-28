@@ -1,4 +1,4 @@
-baseURL = 'https://arbs09.dev/'
+baseURL = 'https://arbs09.dev'
 
 languageCode = 'en'
 defaultContentLanguage = "en"

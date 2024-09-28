@@ -1,7 +1,7 @@
 +++
 title = 'Hello World from my new site'
 date = 2024-09-28
-draft = false
+draft = 
 series = ["site updates"]
 author = "arbs09"
 description = "About my new site. Hello World!"
