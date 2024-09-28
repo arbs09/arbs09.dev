@@ -26,6 +26,9 @@ enableEmoji = true
 
 
 [params]
+
+  keywords = "arbs09, dev blog, blog, developer, html, python, pyguard"
+  subtitle = "arbs09 dev Blog"
   contentTypeName = "posts"
   jsonLD = true
   showAuthor = true
