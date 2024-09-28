@@ -9,4 +9,4 @@ description = "About my new site. Hello World!"
 
 ## About my new site
 
-Hello World from my new site build in [hugo](https://gohugo.io/), with the theme [Tailwind](https://github.com/tomowang/hugo-theme-tailwind).
+Hello World from my new site build in [hugo](https://gohugo.io/), using the theme [Tailwind](https://github.com/tomowang/hugo-theme-tailwind).

@@ -11,8 +11,6 @@ theme = "tailwind"
 enableRobotsTXT = true
 enableEmoji = true
 
-env = "production"
-
 [markup]
   _merge = "deep"
   [markup.highlight]
