@@ -4,6 +4,7 @@ languageCode = 'en'
 defaultContentLanguage = "en"
 
 title = 'arbs09 Blog'
+description = "dev blog from arbs09"
 copyright = "arbs09"
 auther = "arbs09"
 theme = "tailwind"
@@ -67,6 +68,14 @@ enableEmoji = true
     title = 'X'
     icon = 'brand-x'
     link = 'https://x.com/arbs09_'
+  
+  [[parms.pwa]]
+    enabled = false
+    icon = "logo.png"
+    icon_sizes = [192, 512]
+
+  [parms.pwa.manifest]
+    description = "dev blog from arbs09"
 
 [taxonomies]
 category = "categories"
