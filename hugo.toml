@@ -11,6 +11,7 @@ theme = "tailwind"
 
 enableRobotsTXT = true
 enableEmoji = true
+paginate = 10
 
 [markup]
   _merge = "deep"
@@ -31,8 +32,10 @@ enableEmoji = true
   keywords = "arbs09, dev blog, blog, developer, html, python, pyguard"
   subtitle = "arbs09 dev Blog"
   contentTypeName = "posts"
+  showReadingTime = false
   jsonLD = true
   showAuthor = true
+
   [author]
     name = "arbs09"
     email = "hi@arbs09.dev"
