@@ -27,7 +27,7 @@ There are several reasons you might want to use Pi-hole:
 
 - a Raspberry Pi 4 (or 3 or 5, but in this tutorials i will be using the RPI 4) set up with dietpi
 
-## Getting you Pi setup with on dietpi
+## Getting you Pi setup with pihole on dietpi
 
 After installing dietpi you ssh into your pi. First run 
 
@@ -52,4 +52,4 @@ And now you alredy have pihole set up, you can manage it via
 
 http://<yourpi.ip>/admin
 
-The Password is the software Password you set up in dietpi (default: dietpi)
+The Password is the software Password you set up in dietpi (default: dietpi).
