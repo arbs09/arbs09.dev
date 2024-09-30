@@ -1,10 +1,20 @@
 +++
-title = 'installing pihole on dietpi'
+title = 'Installing pihole on dietpi'
 date = 2024-09-29
 draft = false
 series = ["ultimate pihole"]
 author = "arbs09"
-description = "How to set up  Pihole - a Network-wide Ad Blocker on dietpi."
+description = "How to set up  Pihole - a Network-wide Ad Blocker on dietpi. What even is PiHole? Why do I even need a PiHole?"
+keywords = [
+    "pihole",
+    "dietpi",
+    "Raspberry Pi",
+    "how to install pihole on dietpi",
+]
+tags = [
+    "pihole",
+    "dietpi",
+]
 +++
 
 ## What even is Pihole?
