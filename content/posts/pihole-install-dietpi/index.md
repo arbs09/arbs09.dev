@@ -1,6 +1,7 @@
 +++
 title = 'Installing pihole on dietpi'
 date = 2024-09-29
+lastmod = 2024-09-30
 draft = false
 series = ["ultimate pihole"]
 author = "arbs09"
