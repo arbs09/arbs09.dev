@@ -34,9 +34,9 @@ paginate = 10
   contentTypeName = "posts"
   showReadingTime = false
   jsonLD = true
-  showAuthor = true
+  showAuthor = false
 
-  [author]
+  [parms.author]
     name = "arbs09"
     email = "hi@arbs09.dev"
 
