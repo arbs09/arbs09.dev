@@ -80,6 +80,18 @@ paginate = 10
   [parms.pwa.manifest]
     description = "dev blog from arbs09"
 
+[menu]
+  [[menu.main]]
+    identifier = "post"
+    name = "Post"
+    pageRef = "/posts"
+    weight = 10
+  [[menu.main]]
+    identifier = "projects"
+    name = "My Projects"
+    pageRef = "/projects"
+    weight = 0
+
 [taxonomies]
 category = "categories"
 tag = "tags"
