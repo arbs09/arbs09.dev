@@ -1,6 +1,4 @@
 User-agent: *
+Allow: /
 Disallow: /search/
-Disallow: /manifest.json
-{{ range .Pages }}
-Disallow: {{ .RelPermalink }}
-{{ end }}
+Sitemap: https://arbs09.dev/sitemap.xml
