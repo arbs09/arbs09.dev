@@ -36,6 +36,9 @@ paginate = 10
   jsonLD = true
   showAuthor = false
 
+  [params.social]
+    twitter = 'Arbs09_'
+
   [parms.author]
     name = "arbs09"
     email = "hi@arbs09.dev"
