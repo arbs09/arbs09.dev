@@ -20,12 +20,6 @@ jobs:
       - name: Install Dart Sass
         run: sudo snap install dart-sass
 
-      - name: Get Theme
-        run: git submodule update --init --recursive
-
-      - name: Update theme to Latest commit
-        run: git submodule update --remote --merge
-
       - name: Build Blog
         env:
           TZ: 'Europe/Berlin'
