@@ -1,0 +1,50 @@
+name: CI
+run-name: Hugo blog deployment
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: deploy
+    steps:
+      - name: Checkout the current branch
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+
+      - name: Install Hugo
+        run: sudo snap install hugo
+
+      - name: Install Dart Sass
+        run: sudo snap install dart-sass
+
+      - name: Get Theme
+        run: git submodule update --init --recursive
+
+      - name: Update theme to Latest commit
+        run: git submodule update --remote --merge
+
+      - name: Build Blog
+        env:
+          TZ: 'Europe/Berlin'
+        run: hugo --minify
+
+      - name: Set up SSH known hosts
+        run: |
+          mkdir -p ~/.ssh
+          touch ~/.ssh/known_hosts
+          ssh-keyscan -H $DEPLOY_SERVER >> ~/.ssh/known_hosts
+        env:
+          DEPLOY_SERVER: ${{ secrets.DEPLOY_SERVER }}
+
+      - name: Install sshpass
+        run: sudo apt-get install -y sshpass
+
+      - name: Deploy the website
+        run: |
+          sshpass -p "${{ secrets.DEPLOY_PASSWORD }}" rsync -avx -e 'ssh' --delete --exclude '.ssh' public/ $DEPLOY_USERNAME@$DEPLOY_SERVER:./
+        env:
+          DEPLOY_SERVER: ${{ secrets.DEPLOY_SERVER }}
+          DEPLOY_USERNAME: ${{ secrets.DEPLOY_USERNAME }}
