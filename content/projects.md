@@ -16,7 +16,7 @@ keywords = [
 
 ## Pyguard Python Discord Bot
 
-I build a discord bot in python. It has some basic commands like per server leveling or global leveling. You can find the code on [Github](https://github.com/arbs09/pyguard). The website is [pyguard.top](https://pyguard.top/).
+I build a discord bot in python. It has some basic commands like per server leveling or global leveling. You can find the code on [Github](https://github.com/arbs09/pyguard). The website is [pyguard](https://pyguard.arbs09.dev/).
 
 ## Watermark Maker
 
