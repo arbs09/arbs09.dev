@@ -20,4 +20,4 @@ I build a discord bot in python. It has some basic commands like per server leve
 
 ## Watermark Maker
 
-I needed a simple watermark maker, so I just build one myself. You can check it out at [watermarkmaker.serverobot.de](https://watermarkmaker.serverobot.de/). The source code is available on [Github](https://github.com/arbs09/watermarkmaker)
+I needed a simple watermark maker, so I just build one myself. You can check it out at [watermark.arbs09.dev](https://watermark.arbs09.dev/). The source code is available on [Github](https://github.com/arbs09/watermarkmaker)
