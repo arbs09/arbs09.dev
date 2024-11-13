@@ -31,7 +31,7 @@ paginate = 10
 
   keywords = "arbs09, dev blog, blog, developer, html, python, pyguard"
   subtitle = "arbs09 dev Blog"
-  contentTypeName = "posts"
+  contentTypeName = "blog"
   showReadingTime = false
   jsonLD = true
   showAuthor = false
@@ -48,7 +48,7 @@ paginate = 10
 
   [params.footer]
     since = 2024
-    poweredby = true
+    poweredby = false
 
   [parms.social_media]
   [[params.social_media.items]]
@@ -85,9 +85,9 @@ paginate = 10
 
 [menu]
   [[menu.main]]
-    identifier = "post"
-    name = "Post"
-    pageRef = "/posts"
+    identifier = "blog"
+    name = "Blog"
+    pageRef = "/blog"
     weight = 10
   [[menu.main]]
     identifier = "projects"
