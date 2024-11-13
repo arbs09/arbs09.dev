@@ -85,15 +85,20 @@ paginate = 10
 
 [menu]
   [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    pageRef = "/"
+    weight = 10
+  [[menu.main]]
     identifier = "blog"
     name = "Blog"
     pageRef = "/blog"
-    weight = 10
+    weight = 20
   [[menu.main]]
     identifier = "projects"
     name = "My Projects"
     pageRef = "/projects"
-    weight = 0
+    weight = 30
 
 [taxonomies]
 category = "categories"
