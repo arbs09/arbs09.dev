@@ -1,5 +1,5 @@
 name: CI
-run-name: Hugo blog deployment
+run-name: Hugo site deployment
 on:
   push:
   workflow_dispatch:
