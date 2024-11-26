@@ -14,29 +14,24 @@ jobs:
         with:
           submodules: true
 
-      - name: Install Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 'node'
+      - name: Install Node.js, Zola, Minify, and sshpass in parallel
+        run: |
+          sudo snap install zola --edge &
+          sudo apt-get install minify sshpass -y &
+          wait
 
-      - name: Install Zola
-        run: sudo snap install zola --edge
+      - name: Install npm dependencies from package.json in parallel
+        run: npm install & wait
 
-      - name: Install npm dependencies from package.json
-        run: npm install
-
-      - name: build TailwindCSS
-        run: npx tailwindcss -i static/input.css -o static/style.css --minify
-
-      - name: Build Site
+      - name: Build TailwindCSS and site in parallel
+        run: |
+          npx tailwindcss -i static/input.css -o static/style.css --minify &
+          zola build &
+          wait
         env:
           TZ: 'Europe/Berlin'
-        run: zola build
 
-      - name: Install minify
-        run: sudo apt-get install minify -y
-
-      - name: minify site
+      - name: Minify site
         run: minify -r -a -o --html-keep-quotes --html-keep-document-tags --html-keep-quotes --html-keep-whitespace --json-keep-numbers --js-keep-var-names public/ public
 
       - name: Set up SSH known hosts
@@ -49,22 +44,16 @@ jobs:
           DEPLOY_SERVER: ${{ secrets.DEPLOY_SERVER }}
           DEPLOY2_SERVER: ${{ secrets.DEPLOY2_SERVER }}
 
-      - name: Install sshpass
-        run: sudo apt-get install sshpass -y
-
-      - name: Deploy the website
+      - name: Deploy the website to both servers in parallel
         run: |
-          sshpass -p "${{ secrets.DEPLOY_PASSWORD }}" rsync -avx -e 'ssh' --delete --exclude '.ssh' public/ $DEPLOY_USERNAME@$DEPLOY_SERVER:./
+          sshpass -p "${{ secrets.DEPLOY_PASSWORD }}" rsync -avx -e 'ssh' --delete --exclude '.ssh' public/ $DEPLOY_USERNAME@$DEPLOY_SERVER:./ &
+          sshpass -p "${{ secrets.DEPLOY2_PASSWORD }}" rsync -avx -e 'ssh' --delete --exclude '.ssh' public/ $DEPLOY2_USERNAME@$DEPLOY2_SERVER:./ &
+          wait
         env:
           DEPLOY_SERVER: ${{ secrets.DEPLOY_SERVER }}
+          DEPLOY2_SERVER: ${{ secrets.DEPLOY2_SERVER }}
           DEPLOY_USERNAME: ${{ secrets.DEPLOY_USERNAME }}
-
-      - name: Deploy the website to backup server
-        run: |
-          sshpass -p "${{ secrets.DEPLOY2_PASSWORD }}" rsync -avx -e 'ssh' --delete --exclude '.ssh' public/ $DEPLOY_USERNAME@$DEPLOY_SERVER:./
-        env:
-          DEPLOY_SERVER: ${{ secrets.DEPLOY2_SERVER }}
-          DEPLOY_USERNAME: ${{ secrets.DEPLOY2_USERNAME }}
+          DEPLOY2_USERNAME: ${{ secrets.DEPLOY2_USERNAME }}
 
       - name: Purge cache
         uses: jakejarvis/cloudflare-purge-action@master
