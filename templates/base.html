@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  {% if page.title %}
+  {% set title = page.title %}
+  {% elif section.title %}
+  {% set title = section.title %}
+  {% elif config.title %}
+  {% set title = config.title %}
+  {% else %}
+  {% set title = "NULL" %}
+  {% endif %}
+  <title>{{ title }}</title>
+
+  <link rel="stylesheet" href="{{ get_url(path="style.css") | safe }}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer data-domain="arbs09.dev" src="https://analytics.arbs09.dev/js/script.outbound-links.js"></script>
+
+  {% if page.description %}
+  {% set description = page.description %}
+  {% elif section.description %}
+  {% set description = section.description %}
+  {% else %}
+  {% set description = config.description %}
+  {% endif %}
+  <meta name="description" content="{{ description }}">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="msapplication-TileColor" content="#2a485a">
+  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path="rss.xml", trailing_slash=false) }}">
+  
+  {% if is_404 %}
+  <meta name="robots" content="noindex, follow" />
+  {% else %}
+  <meta name="robots" content="index, follow" />
+  {% endif %}
+
+  {% if current_url %}
+  <link rel="canonical" href="{{ current_url | safe }}">
+  {% endif %}
+</head>
+
+<body class="bg-gray-200">
+  {% include "nav.html" %}
+  <section class="min-h-screen">
+    <div>
+      {% block content %} {% endblock %}
+    </div>
+  </section>
+  {% include "footer.html" %}
+</body>
+
+</html>

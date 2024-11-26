@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /search/
-Disallow: /manifest.json
-Sitemap: https://arbs09.dev/sitemap.xml
