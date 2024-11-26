@@ -23,13 +23,11 @@ jobs:
       - name: Install npm dependencies from package.json in parallel
         run: npm install & wait
 
-      - name: Build TailwindCSS and site in parallel
-        run: |
-          npx tailwindcss -i static/input.css -o static/style.css --minify &
-          zola build &
-          wait
-        env:
-          TZ: 'Europe/Berlin'
+      - name: build TailwindCSS
+        run: npx tailwindcss -i static/input.css -o static/style.css --minify
+      
+      - name: zola build
+        run: zola build
 
       - name: Minify site
         run: minify -r -a -o --html-keep-quotes --html-keep-document-tags --html-keep-quotes --html-keep-whitespace --json-keep-numbers --js-keep-var-names public/ public
