@@ -13,6 +13,8 @@
   {% set title = "NULL" %}
   {% endif %}
   <title>{{ title }}</title>
+  <meta property="og:title" content="{{ title }}" />
+  <meta name="twitter:title" content="{{ title }}" />
 
   <link rel="stylesheet" href="{{ get_url(path="style.css") | safe }}" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,6 +28,8 @@
   {% set description = config.description %}
   {% endif %}
   <meta name="description" content="{{ description }}">
+  <meta name="twitter:description" content="{{ description }}" />
+  <meta property="og:description" content="{{ description }}" />
 
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -45,7 +49,19 @@
 
   {% if current_url %}
   <link rel="canonical" href="{{ current_url | safe }}">
+  <meta property="og:url" content="{{ current_url | safe }}" />
   {% endif %}
+
+  <meta name="twitter:site" content="@arbs09_" />
+  {% if page.image %}
+  <meta property="og:image" content="{{ page.image | safe }}" />
+  <meta name="twitter:image" content="{{ page.image | safe }}" />
+  <meta name="twitter:card" content="summary_large_image" />
+  {% else %}
+  <meta name="twitter:card" content="summary" />
+  {% endif %}
+
+  <meta property="og:type" content="website" />
 </head>
 
 <body class="bg-gray-200">
