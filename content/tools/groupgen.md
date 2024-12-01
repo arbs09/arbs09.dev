@@ -1,6 +1,6 @@
 +++
-title = "Group Generator"
-description = "My Projects"
+title = "Gruppenzufallsgenerator"
+description = ""
 template = "groupgen.html"
 lang = "de"
 +++
