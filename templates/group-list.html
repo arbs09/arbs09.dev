@@ -8,10 +8,10 @@
     <div class="space-y-4">
         {% for page in section.pages %}
         <div class="bg-white shadow-md rounded-lg p-4 border border-gray-200 hover:shadow-lg transition-shadow duration-300">
-            <a href="{{ page.permalink | safe }}" 
+            <h3><a href="{{ page.permalink | safe }}" 
                class="text-blue-600 hover:text-blue-800 font-medium transition duration-300">
                 {{ page.title }}
-            </a>
+            </a></h3>
             <p class="text-sm text-gray-600 mt-2">>&nbsp;{{ page.description }}</p>
         </div>
         {% endfor %}
