@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="min-h-screen bg-gradient-to-br flex items-center justify-center">
+    <div class="bg-white shadow-xl rounded-lg p-8 max-w-lg w-full">
+        <h1 class="text-3xl font-bold text-center text-blue-700 mb-6">Münzenwerfen Zufallsgenerator</h1>
+        
+        <div class="text-center mb-6">
+            <p class="text-gray-600">Drücke auf den Button, um Kopf oder Zahl zu werfen!</p>
+        </div>
+        
+        <button 
+            id="flipCoinBtn" 
+            class="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 transform hover:scale-105">
+            Münze Werfen
+        </button>
+        
+        <div id="coinResult" class="mt-6 text-center text-2xl font-semibold text-gray-700"></div>
+    </div>
+</div>
+<script src="{{ get_url(path="js/coin.js") | safe }}"></script>
+{% endblock content %}

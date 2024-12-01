@@ -1,6 +1,6 @@
 +++
 title = "Gruppenzufallsgenerator"
 description = ""
-template = "groupgen.html"
+template = "tools/groupgen.html"
 lang = "de"
 +++
