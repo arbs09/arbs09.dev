@@ -5,16 +5,16 @@
     <h1 class="text-center text-2xl font-bold py-4">{{ section.title }}</h1>
     <hr class="border-t-2 border-gray-300 my-6 mx-auto w-1/2">
     <h2 class="text-lg font-semibold py-2">List:</h2>
-    <ul class="list-disc pl-5 space-y-2">
-    {% for page in section.pages %}
-        <li>
+    <div class="space-y-4">
+        {% for page in section.pages %}
+        <div class="bg-white shadow-md rounded-lg p-4 border border-gray-200 hover:shadow-lg transition-shadow duration-300">
             <a href="{{ page.permalink | safe }}" 
-               class="text-blue-600 hover:text-blue-800 transition duration-300">
+               class="text-blue-600 hover:text-blue-800 font-medium transition duration-300">
                 {{ page.title }}
             </a>
-            <p>>{{ page.description }}</p>
-        </li>
-    {% endfor %}
-    </ul>
+            <p class="text-sm text-gray-600 mt-2">>&nbsp;{{ page.description }}</p>
+        </div>
+        {% endfor %}
+    </div>
 </div>
 {% endblock content %}
