@@ -17,4 +17,4 @@ internal_level = "error"
 external_level = "error"
 
 [extra]
-keywords = ["arbs09"]
+keywords = "arbs09"

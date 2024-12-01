@@ -49,7 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // Display groups
         resultDiv.innerHTML = groups.map((group, i) => `
             <div class="mb-4">
                 <h3 class="text-lg font-semibold text-blue-700">Gruppe ${i + 1}</h3>

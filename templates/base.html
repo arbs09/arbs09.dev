@@ -62,11 +62,11 @@
   {% endif %}
 
   {% if page.keywords %}
-  {% set keywords = page.keywords %}
+  {% set keywords = page.extra.keywords %}
   {% elif section.keywords %}
   {% set keywords = section.keywords %}
-  {% else %}
-  {% set keywords = "arbs09" %}
+  {% elif config.extra.keywords %}
+  {% set keywords = config.extra.keywords %}
   {% endif %}
   <meta name="keywords" content="{{ keywords }}">
 
