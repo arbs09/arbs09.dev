@@ -4,4 +4,5 @@
 <div class="flex items-center justify-center h-screen">
   <h1 class="text-6xl font-bold text">404</h1>
 </div>
+<script>document.addEventListener('DOMContentLoaded', function () { plausible('404', { props: { path: document.location.pathname } }); });</script>
 {% endblock content %}
