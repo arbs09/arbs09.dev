@@ -29,7 +29,7 @@ jobs:
         run: zola build
 
       - name: Minify site
-        run: minify -r -a -s -v -o ready/ --html-keep-quotes --html-keep-document-tags --html-keep-whitespace --json-keep-numbers --js-keep-var-names --include "*.js" --include "*.css" --include "*.html" public/
+        run: minify -r -a -s -v -o ready/ --html-keep-quotes --html-keep-document-tags --html-keep-whitespace --json-keep-numbers --js-keep-var-names public/
 
 
       - name: Set up SSH known hosts
