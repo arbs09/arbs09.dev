@@ -14,12 +14,11 @@ jobs:
         with:
           submodules: true
 
-      - name: Install Node.js, Zola, and sshpass in parallel
+      - name: Install Node.js, Zola, Minify, and sshpass in parallel
         run: |
           sudo snap install zola --edge &
-          sudo apt-get install sshpass -y &
+          sudo apt-get install minify sshpass -y &
           wait
-
       - name: Install npm dependencies from package.json in parallel
         run: npm install & wait
 
@@ -29,10 +28,8 @@ jobs:
       - name: zola build
         run: zola build
 
-      - name: HTML/CSS/JS Minifier
-        uses: docker://devatherock/minify-js:3.1.0
-        with:
-          directory: 'public' 
+      - name: Minify site
+        run: minify -r -a -o --html-keep-quotes --html-keep-document-tags --html-keep-quotes --html-keep-whitespace --json-keep-numbers --js-keep-var-names public/ public/
 
       - name: Set up SSH known hosts
         run: |
