@@ -43,8 +43,8 @@ jobs:
 
       - name: Deploy the website to both servers in parallel
         run: |
-          sshpass -p "${{ secrets.DEPLOY_PASSWORD }}" rsync -avx -e 'ssh' --delete --exclude '.ssh' public/ $DEPLOY_USERNAME@$DEPLOY_SERVER:./ &
-          sshpass -p "${{ secrets.DEPLOY2_PASSWORD }}" rsync -avx -e 'ssh' --delete --exclude '.ssh' public/ $DEPLOY2_USERNAME@$DEPLOY2_SERVER:./ &
+          sshpass -p "${{ secrets.DEPLOY_PASSWORD }}" rsync -avx -e 'ssh' --delete --exclude '.ssh' ready/ $DEPLOY_USERNAME@$DEPLOY_SERVER:./ &
+          sshpass -p "${{ secrets.DEPLOY2_PASSWORD }}" rsync -avx -e 'ssh' --delete --exclude '.ssh' ready/ $DEPLOY2_USERNAME@$DEPLOY2_SERVER:./ &
           wait
         env:
           DEPLOY_SERVER: ${{ secrets.DEPLOY_SERVER }}
