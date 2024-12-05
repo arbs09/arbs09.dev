@@ -32,7 +32,7 @@ jobs:
       - name: HTML/CSS/JS Minifier
         uses: docker://devatherock/minify-js:3.1.0
         with:
-          directory: 'puplic' 
+          directory: 'public' 
 
       - name: Set up SSH known hosts
         run: |
