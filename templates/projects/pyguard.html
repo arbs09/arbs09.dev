@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="min-h-screen scroll-smooth">
+    <div class="relative min-h-screen bg-center px-5 md:px-28 py-5 inset-0 h-full w-full bg-gray-900 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] dark:bg-gray-900 dark:bg-[radial-gradient(#374151_1px,transparent_1px)]">
+        <div class="flex flex-col md:flex-row items-center justify-between text-white mt-24 md:mt-48 max-w-7xl mx-auto">
+            <div class="w-full md:w-1/2 text-center md:text-left">
+                <h1 class="text-4xl md:text-6xl font-semibold leading-normal">PyGuard<br>Your Discord Bot</h1>
+                <p class="mt-4">PyGuard collects statistics about users' messaging behavior on the global network of Discord servers with PyGuard.</p>
+                <div class="mt-10 flex flex-col md:flex-row items-center justify-center md:justify-start">
+                    <a href="https://discord.com/oauth2/authorize?client_id=1262095103099670620&permissions=8&integration_type=0&scope=bot" rel="dofollow" target="_blank" class="bg-blue-800 rounded-3xl py-3 px-8 font-medium inline-block mr-0 md:mr-4 mb-4 md:mb-0 hover:bg-transparent hover:border-blue-800 hover:text-white duration-300 border border-transparentplausible-event-name="pyguard-invite"">Invite</a>
+                    <a href="#features" class="bg-transparent rounded-3xl py-3 px-8 font-medium inline-block hover:bg-transparent hover:border-blue-800 hover:text-white duration-300 border border-transparent">Look up the features <span class="text-lg inline-block rotate-90">&#10148;</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="min-h-screen relative bg-cover bg-center px-5 md:px-52 py-5 bg-gray-800 text-white" id="features">
+        <h2 class="text-center text-4xl font-semibold leading-normal">Features</h2>
+        <div class="mt-10 md:mt-20 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div class="bg-gray-700 p-6 rounded-lg shadow-md">
+                <h3 class="text-2xl font-semibold leading-normal">Leveling</h3>
+                <p class="mt-2 text-lg">The bot has a per-server leveling system, so you get rewarded levels on your discord server. (the bot has to be on that server too)</p>
+            </div>
+            <div class="bg-gray-700 p-6 rounded-lg shadow-md">
+                <h3 class="text-2xl font-semibold leading-normal">Global Leveling</h3>
+                <p class="mt-2 text-lg">For users, there is a global leveling feature, so you not only have a level per server, but also a level across all servers you (and the bot) are on.</p>
+            </div>
+            <div class="bg-gray-700 p-6 rounded-lg shadow-md">
+                <h3 class="text-2xl font-semibold leading-normal">Manual User Verify</h3>
+                <p class="mt-2 text-lg">PyGuard collects data about users' messaging behavior so you can verify if a user is trustworthy manually</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="min-h-screen relative bg-cover bg-center px-5 md:px-52 py-5 bg-gray-900 text-white" id="comingsoon">
+        <h2 class="text-center text-4xl font-semibold leading-normal">Features Coming Soon</h2>
+        <div class="mt-10 md:mt-20 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div class="bg-gray-700 p-6 rounded-lg shadow-md">
+                <h3 class="text-3xl font-semibold leading-normal">Automatic User Verify</h3>
+                <p class="mt-1 text-lg">Let the bot automatically check new users to see if they have a minimum global level/XP and verify them automatically. If they don't have the minimum or aren't recorded in the global database, make the check a checkbox to verify them.</p>
+            </div>
+            <div class="bg-gray-700 p-6 rounded-lg shadow-md">
+                <h3 class="text-3xl font-semibold leading-normal">Global User Warn System</h3>
+                <p class="mt-1 text-lg">If someone gets banned on a server in our network, a moderator can send a report about it. Other moderators on similar servers will then get a warning message.</p>
+            </div>
+            <div class="bg-gray-700 p-6 rounded-lg shadow-md">
+                <h3 class="text-3xl font-semibold leading-normal">Reaction Roles</h3>
+            </div>
+            <div class="bg-gray-700 p-6 rounded-lg shadow-md">
+                <h3 class="text-3xl font-semibold leading-normal">Welcome Messages</h3>
+                <p class="mt-1 text-lg">Give new users on your Discord server a warm welcome with a personalized message for each of them.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="min-h-screen relative bg-cover bg-center px-5 md:px-52 py-5 bg-gray-800 text-white" id="faq">
+        <h2 class="text-center text-4xl font-semibold leading-normal">FAQ</h2>
+        <div class="mt-10 md:mt-20 max-w-5xl mx-auto">
+            <!-- FAQ Item 1 -->
+            <div class="bg-gray-700 p-6 rounded-lg shadow-md mb-8">
+                <h3 class="faq-question text-2xl font-semibold leading-normal cursor-pointer flex items-center justify-between">
+                    What is PyGuard?
+                    <span class="text-xl transition-transform duration-300 faq-icon">&#9660;</span>
+                </h3>
+                <div class="faq-answer hidden mt-2 text-lg">
+                    <p>PyGuard is a Discord bot with lots of features, including per-server and global leveling, games (coming soon), and user trust measurements. It also gathers data on how users interact with each other on the Discord network.</p>
+                </div>
+            </div>
+            <!-- FAQ Item 2 -->
+            <div class="bg-gray-700 p-6 rounded-lg shadow-md mb-8">
+                <h3 class="faq-question text-2xl font-semibold leading-normal cursor-pointer flex items-center justify-between">
+                    How does the leveling system work?
+                    <span class="text-xl transition-transform duration-300 faq-icon">&#9660;</span>
+                </h3>
+                <div class="faq-answer hidden mt-2 text-lg">
+                    <p>The bot has a per-server leveling system, so you get rewarded levels on your Discord server. Plus, there's a global leveling feature, so you not only have a level per server, but also a level across all servers you and the bot are on.</p>
+                </div>
+            </div>
+            <!-- FAQ Item 3 -->
+            <div class="bg-gray-700 p-6 rounded-lg shadow-md mb-8">
+                <h3 class="faq-question text-2xl font-semibold leading-normal cursor-pointer flex items-center justify-between">
+                    How can I verify users?
+                    <span class="text-xl transition-transform duration-300 faq-icon">&#9660;</span>
+                </h3>
+                <div class="faq-answer hidden mt-2 text-lg">
+                    <p>PyGuard gathers info about how users interact with each other so you can manually check if someone's trustworthy. We're also adding an automatic verification feature soon.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{{ get_url(path="js/pyguard.js") | safe }}"></script>
+{% endblock content %}
