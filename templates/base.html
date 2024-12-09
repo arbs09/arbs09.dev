@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+{% if page.extra.lang %}{% set lang = page.extra.lang %}{% else %}{% set lang = "en" %}{% endif %}
+<html lang="{{ lang }}">
 
 <head>
   <meta charset="utf-8">
@@ -60,15 +61,6 @@
   {% else %}
   <meta name="twitter:card" content="summary" />
   {% endif %}
-
-  {% if page.keywords %}
-  {% set keywords = page.extra.keywords %}
-  {% elif section.keywords %}
-  {% set keywords = section.keywords %}
-  {% elif config.extra.keywords %}
-  {% set keywords = config.extra.keywords %}
-  {% endif %}
-  <meta name="keywords" content="{{ keywords }}">
 
   <meta property="og:type" content="website" />
   <meta name="fediverse:creator" content="@arbs@mastodon.social">
