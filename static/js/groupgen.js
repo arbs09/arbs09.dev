@@ -10,10 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const inputValue = parseInt(inputField.value);
         const mode = modeSelector.value;
 
-        // Clear previous results
         resultDiv.innerHTML = "";
 
-        // Validate inputs
         if (!namesInput || isNaN(inputValue) || inputValue <= 0) {
             resultDiv.innerHTML = "<p class='text-red-500'>Bitte geben Sie gültige Daten ein!</p>";
             return;
@@ -24,14 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
             .map(name => name.trim())
             .filter(name => name);
 
-        // Check for insufficient people
         if ((mode === "groups" && names.length < inputValue) || 
             (mode === "people" && inputValue > names.length)) {
             resultDiv.innerHTML = "<p class='text-red-500'>Bitte geben Sie gültige Daten ein!</p>";
             return;
         }
 
-        // Shuffle names array
         for (let i = names.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [names[i], names[j]] = [names[j], names[i]];
@@ -41,20 +37,17 @@ document.addEventListener('DOMContentLoaded', () => {
         let leftover = [];
 
         if (mode === "groups") {
-            // Create groups
             groups = Array.from({ length: inputValue }, () => []);
             names.forEach((name, index) => {
                 groups[index % inputValue].push(name);
             });
 
-            // Handle extra group logic
             if (extraGroupCheckbox.checked && names.length % inputValue !== 0) {
                 leftover = groups.flat().splice(names.length - (names.length % inputValue));
                 groups = groups.slice(0, inputValue);
                 if (leftover.length) groups.push(leftover);
             }
         } else if (mode === "people") {
-            // Create groups of a specific size
             while (names.length) {
                 if (names.length < inputValue) {
                     if (!extraGroupCheckbox.checked) {
@@ -72,7 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // Render groups
         resultDiv.innerHTML = groups.map((group, i) => `
             <div class="mb-4">
                 <h3 class="text-lg font-semibold ${i === groups.length - 1 && leftover.length ? 'text-red-500' : 'text-blue-700'}">

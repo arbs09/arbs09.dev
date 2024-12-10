@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
+    <div class="bg-white shadow-xl rounded-lg p-8 max-w-lg w-full">
+        <h1 class="text-3xl font-bold text-center text-blue-700 mb-6">Zufallszahlen-Generator</h1>
+        
+        <!-- Input Fields -->
+        <div class="mb-4">
+            <label for="min" class="block text-gray-700 mb-2">Minimum:</label>
+            <input 
+                id="min" 
+                type="number" 
+                value="1" 
+                class="w-full border border-gray-300 rounded-lg p-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+        </div>
+
+        <div class="mb-4">
+            <label for="max" class="block text-gray-700 mb-2">Maximum:</label>
+            <input 
+                id="max" 
+                type="number" 
+                value="100" 
+                class="w-full border border-gray-300 rounded-lg p-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+        </div>
+
+        <!-- Generate Button -->
+        <button 
+            id="generateBtn" 
+            class="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 transform hover:scale-105">
+            Zufallszahl generieren
+        </button>
+
+        <!-- Output -->
+        <div id="output" class="mt-6 text-center text-3xl font-bold text-blue-500">
+            <!-- Random Number Will Appear Here -->
+        </div>
+    </div>
+</div>
+
+<script src="{{ get_url(path='js/zufallszahlen.js') | safe }}"></script>
+{% endblock content %}
