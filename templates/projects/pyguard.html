@@ -1,5 +1,53 @@
 {% extends "base.html" %}
 
+{% block structured_data %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "name": "Projects",
+    "item": "https://arbs09.dev/projects/"
+    },{
+    "@type": "ListItem",
+    "position": 2,
+    "name": "Pyguard",
+    "item": "https://arbs09.dev/projects/pyguard/"
+    }]
+}
+</script>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+    "@type": "Question",
+    "name": "What is PyGuard?",
+    "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We provide an official service to search through available apprenticeships. To get started, create an account here, specify the desired region, and your preferences. You will be able to search through all officially registered open apprenticeships.PyGuard is a Discord bot with lots of features, including per-server and global leveling, games (coming soon), and user trust measurements. It also gathers data on how users interact with each other on the Discord network."
+    }
+    }, {
+    "@type": "Question",
+    "name": "How does the leveling system work?",
+    "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The bot has a per-server leveling system, so you get rewarded levels on your Discord server. Plus, there's a global leveling feature, so you not only have a level per server, but also a level across all servers you and the bot are on."
+    }
+    }, {
+    "@type": "Question",
+    "name": "How can I verify users?",
+    "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PyGuard gathers info about how users interact with each other so you can manually check if someone's trustworthy. We're also adding an automatic verification feature soon."
+    }
+    }]
+}
+</script>
+{% endblock structured_data %}
+
 {% block content %}
 <div class="min-h-screen scroll-smooth">
     <div class="relative min-h-screen bg-center px-5 md:px-28 py-5 inset-0 h-full w-full bg-gray-900 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] dark:bg-gray-900 dark:bg-[radial-gradient(#374151_1px,transparent_1px)]">
@@ -54,28 +102,37 @@
         </div>
     </div>
 
-    <div class="min-h-screen bg-gray-800 text-white relative bg-cover bg-center px-5 md:px-52 py-5" id="faq">
-        <h1 class="text-center text-4xl font-semibold leading-normal">FAQ</h1>
+    <div class="min-h-screen relative bg-cover bg-center px-5 md:px-52 py-5 bg-gray-800 text-white" id="faq">
+        <h2 class="text-center text-4xl font-semibold leading-normal">FAQ</h2>
         <div class="mt-10 md:mt-20 max-w-5xl mx-auto">
-
-            <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" class="bg-gray-700 p-6 rounded-lg shadow-md mb-8">
-                <h2 itemprop="name" class="faq-question text-2xl font-semibold leading-normal cursor-pointer flex items-center justify-between">What is PyGuard? <span class="text-xl transition-transform duration-300 faq-icon">&#9660;</span></h2>
-                <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" class="faq-answer hidden mt-2 text-lg">
-                    <div itemprop="text">PyGuard is a Discord bot with lots of features, including per-server and global leveling, games (coming soon), and user trust measurements. It also gathers data on how users interact with each other on the Discord network.</div>
+            <!-- FAQ Item 1 -->
+            <div class="bg-gray-700 p-6 rounded-lg shadow-md mb-8">
+                <h3 class="faq-question text-2xl font-semibold leading-normal cursor-pointer flex items-center justify-between">
+                    What is PyGuard?
+                    <span class="text-xl transition-transform duration-300 faq-icon">&#9660;</span>
+                </h3>
+                <div class="faq-answer hidden mt-2 text-lg">
+                    <p>PyGuard is a Discord bot with lots of features, including per-server and global leveling, games (coming soon), and user trust measurements. It also gathers data on how users interact with each other on the Discord network.</p>
                 </div>
             </div>
-
-            <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" class="bg-gray-700 p-6 rounded-lg shadow-md mb-8">
-                <h2 itemprop="name" class="faq-question text-2xl font-semibold leading-normal cursor-pointer flex items-center justify-between">How does the leveling system work? <span class="text-xl transition-transform duration-300 faq-icon">&#9660;</span></h2>
-                <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" class="faq-answer hidden mt-2 text-lg">
-                    <div itemprop="text">The bot has a per-server leveling system, so you get rewarded levels on your Discord server. Plus, there's a global leveling feature, so you not only have a level per server, but also a level across all servers you and the bot are on.</div>
+            <!-- FAQ Item 2 -->
+            <div class="bg-gray-700 p-6 rounded-lg shadow-md mb-8">
+                <h3 class="faq-question text-2xl font-semibold leading-normal cursor-pointer flex items-center justify-between">
+                    How does the leveling system work?
+                    <span class="text-xl transition-transform duration-300 faq-icon">&#9660;</span>
+                </h3>
+                <div class="faq-answer hidden mt-2 text-lg">
+                    <p>The bot has a per-server leveling system, so you get rewarded levels on your Discord server. Plus, there's a global leveling feature, so you not only have a level per server, but also a level across all servers you and the bot are on.</p>
                 </div>
             </div>
-
-            <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" class="bg-gray-700 p-6 rounded-lg shadow-md mb-8">
-                <h2 itemprop="name" class="faq-question text-2xl font-semibold leading-normal cursor-pointer flex items-center justify-between">How can I verify users? <span class="text-xl transition-transform duration-300 faq-icon">&#9660;</span></h2>
-                <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" class="faq-answer hidden mt-2 text-lg">
-                    <div itemprop="text">PyGuard gathers info about how users interact with each other so you can manually check if someone's trustworthy. We're also adding an automatic verification feature soon.</div>
+            <!-- FAQ Item 3 -->
+            <div class="bg-gray-700 p-6 rounded-lg shadow-md mb-8">
+                <h3 class="faq-question text-2xl font-semibold leading-normal cursor-pointer flex items-center justify-between">
+                    How can I verify users?
+                    <span class="text-xl transition-transform duration-300 faq-icon">&#9660;</span>
+                </h3>
+                <div class="faq-answer hidden mt-2 text-lg">
+                    <p>PyGuard gathers info about how users interact with each other so you can manually check if someone's trustworthy. We're also adding an automatic verification feature soon.</p>
                 </div>
             </div>
         </div>

@@ -1,5 +1,24 @@
 {% extends "base.html" %}
 
+{% block structured_data %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "name": "Tools",
+    "item": "https://arbs09.dev/tools/"
+    },{
+    "@type": "ListItem",
+    "position": 2,
+    "name": "Notenrechner",
+    "item": "https://arbs09.dev/tools/noten/"
+    }]
+}
+</script>
+{% endblock structured_data %}
 {% block content %}
 <div class="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
     <div class="bg-white shadow-xl rounded-lg p-8 max-w-lg w-full">
