@@ -63,6 +63,11 @@
         <div id="result" class="mt-6 text-gray-700"></div>
     </div>
 </div>
+<div class="min-h-screen flex items-center justify-center">
+    <article class="prose lg:prose-lg py-8 text-center">
+        {{ page.content | safe }}
+    </article>
+</div>
 
 <script src="{{ get_url(path="js/groupgen.js") | safe }}"></script>
 {% endblock content %}
