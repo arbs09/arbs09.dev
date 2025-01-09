@@ -42,14 +42,22 @@ jobs:
           DEPLOY_SERVER: ${{ secrets.DEPLOY_SERVER }}
           DEPLOY2_SERVER: ${{ secrets.DEPLOY2_SERVER }}
 
-      - name: Deploy the website to both servers in parallel
+      - name: Deploy the website to main server
         run: |
           sshpass -p "${{ secrets.DEPLOY_PASSWORD }}" rsync -avx -e 'ssh' --delete --exclude '.ssh' ready/public/ $DEPLOY_USERNAME@$DEPLOY_SERVER:./
-          sshpass -p "${{ secrets.DEPLOY2_PASSWORD }}" rsync -avx -e 'ssh' --delete --exclude '.ssh' ready/public/ $DEPLOY2_USERNAME@$DEPLOY2_SERVER:./
+          
         env:
           DEPLOY_SERVER: ${{ secrets.DEPLOY_SERVER }}
           DEPLOY2_SERVER: ${{ secrets.DEPLOY2_SERVER }}
           DEPLOY_USERNAME: ${{ secrets.DEPLOY_USERNAME }}
+          DEPLOY2_USERNAME: ${{ secrets.DEPLOY2_USERNAME }}
+      
+      - name: Deploy the website to backup server
+        run: |
+          sshpass -p "${{ secrets.DEPLOY_PASSWORD }}" rsync -avx -e 'ssh' --delete --exclude '.ssh' ready/public/ $DEPLOY2_USERNAME@$DEPLOY2_SERVER:./
+          
+        env:
+          DEPLOY2_SERVER: ${{ secrets.DEPLOY2_SERVER }}
           DEPLOY2_USERNAME: ${{ secrets.DEPLOY2_USERNAME }}
 
       - name: Purge cache
