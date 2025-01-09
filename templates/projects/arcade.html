@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block structured_data %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "name": "Projects",
+    "item": "https://arbs09.dev/projects/"
+    },{
+    "@type": "ListItem",
+    "position": 2,
+    "name": "{{ page.title | safe }}",
+    "item": "https://arbs09.dev/projects/arcade/"
+    }]
+}
+</script>
+{% endblock structured_data %}
+
+{% block content %}
+<div class="container mx-auto px-4 sm:px-6 md:px-8 lg:px-32 xl:px-48 py-8">
+    <h1 class="text-center text-2xl font-bold py-5">
+      {{ page.title }}
+    </h1>
+    <hr class="border-t-2 border-gray-300 my-6 mx-auto w-1/2">
+    <div class="py-8 items-center justify-center mx-auto"> 
+        <iframe frameborder="0" class="mx-auto" src="https://itch.io/embed/3230816?border_width=5" width="560" height="175"><a href="https://arbs09.itch.io/arcade">Arcade by arbs09</a></iframe>
+    </div>
+  </div>
+{% endblock content %}
