@@ -23,7 +23,7 @@ jobs:
         run: npm install & wait
 
       - name: build TailwindCSS
-        run: npx tailwindcss -i static/input.css -o static/style.css --minify
+        run: npx @tailwindcss/cli -i static/input.css -o static/style.css --minify
       
       - name: zola build
         run: zola build
