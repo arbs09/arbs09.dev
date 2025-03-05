@@ -49,6 +49,7 @@
 {% endblock structured_data %}
 
 {% block content %}
+{% set pyguard_logo = resize_image(path="img/pyguard.png", op="fit_width", width=500, format="webp", quality=80) %}
 <div class="min-h-screen scroll-smooth">
     <div class="relative min-h-screen bg-center px-5 md:px-28 py-5 inset-0 h-full w-full bg-gray-900 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] dark:bg-gray-900 dark:bg-[radial-gradient(#374151_1px,transparent_1px)]">
         <div class="flex flex-col md:flex-row items-center justify-between text-white mt-24 md:mt-48 max-w-7xl mx-auto">
@@ -59,6 +60,9 @@
                     <a href="https://discord.com/oauth2/authorize?client_id=1262095103099670620&permissions=8&integration_type=0&scope=bot" rel="dofollow" target="_blank" class="bg-blue-800 rounded-3xl py-3 px-8 font-medium inline-block mr-0 md:mr-4 mb-4 md:mb-0 hover:bg-transparent hover:border-blue-800 hover:text-white duration-300 border border-transparentplausible-event-name="pyguard-invite"">Invite</a>
                     <a href="#features" class="bg-transparent rounded-3xl py-3 px-8 font-medium inline-block hover:bg-transparent hover:border-blue-800 hover:text-white duration-300 border border-transparent">Look up the features <span class="text-lg inline-block rotate-90">&#10148;</span></a>
                 </div>
+            </div>
+            <div class="w-full md:w-1/2 mt-10 md:mt-0 flex justify-center md:justify-center">
+                <img src="{{ pyguard_logo.url }}" alt="PyGuard Image" class="w-48">
             </div>
         </div>
     </div>
