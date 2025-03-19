@@ -27,7 +27,13 @@
     </h1>
     <hr class="border-t-2 border-gray-300 my-6 mx-auto w-1/2">
     <div class="py-8 items-center justify-center mx-auto"> 
-        <iframe frameborder="0" class="mx-auto" src="https://itch.io/embed/3230816?border_width=5" width="560" height="175"><a href="https://arbs09.itch.io/arcade">Arcade by arbs09</a></iframe>
+        <iframe frameborder="0" class="mx-auto" src="https://itch.io/embed/3230816?border_width=5" width="560" height="175">
+            <a href="https://arbs09.itch.io/arcade">Arcade by arbs09</a>
+        </iframe>
     </div>
+    <article class="prose lg:prose-lg py-8">
+      {{ page.content | safe }}
+    </article>
 </div>
+
 {% endblock content %}

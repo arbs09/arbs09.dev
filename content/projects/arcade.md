@@ -6,3 +6,6 @@ description = "I build a game in pygame."
 [extra]
 lang = "en"
 +++
+
+## API
+Btw for the highscore i use a custom simple highscore api: [github.com/arbs09/simple-highscore-api](https://github.com/arbs09/simple-highscore-api)
