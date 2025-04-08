@@ -1,8 +1,9 @@
 +++
-title = "Web-Honeypot"
+title = "robots.txt honeypot"
 date = 2025-04-08
 description = "There are some Crawlers out there, wich don't respect robots.txt. This Honeypot wich I made tries to find them and report them."
 draft = false
+aliases = ["/projects/web-honeypot"]
 [extra]
 lang = "en"
 +++
