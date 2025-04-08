@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="flex justify-center items-center min-h-screen">
+  <div class="container mx-auto px-4 sm:px-6 md:px-8 lg:px-32 xl:px-48 py-8">
+    <h1 class="text-center text-2xl font-bold py-5">
+      {{ page.title }}
+    </h1>
+    <hr class="border-t-2 border-gray-300 my-6 mx-auto w-1/2">
+    <article class="prose lg:prose-lg py-8">
+      {{ page.content | safe }}
+    </article>
+  </div>
+</div>
+{% endblock content %}
