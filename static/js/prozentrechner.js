@@ -3,8 +3,11 @@ function calculatePercentage() {
     document.getElementById('error-message').textContent = '';
     document.getElementById('result').textContent = '';
 
-    const amountInput = document.getElementById('amount').value;
-    const percentageInput = document.getElementById('percentage').value;
+    let amountInput = document.getElementById('amount').value;
+    let percentageInput = document.getElementById('percentage').value;
+
+    amountInput = amountInput.replace(',', '.');
+    percentageInput = percentageInput.replace(',', '.');
 
     if (!isValidInput(amountInput) || !isValidInput(percentageInput)) {
         document.getElementById('error-message').textContent = 'Bitte geben Sie gültige Zahlen ein!';
@@ -20,6 +23,6 @@ function calculatePercentage() {
 }
 
 function isValidInput(input) {
-    const num = parseFloat(input);
+    const num = parseFloat(input.replace(',', '.'));
     return !isNaN(num) && num >= 0;
 }
