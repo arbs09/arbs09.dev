@@ -1,18 +1,25 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="container mx-auto px-4 sm:px-6 md:px-8 lg:px-32 xl:px-48 py-8">
+<div class="container mx-auto px-4 sm:px-6 md:px-8 py-8">
     <h1 class="text-center text-2xl font-bold py-4">{{ section.title }}</h1>
     <hr class="border-t-2 border-gray-300 my-6 mx-auto w-1/2">
-    <h2 class="text-lg font-semibold py-2">List:</h2>
-    <div class="space-y-4">
+
+    <div class="grid grid-cols-1 gap-6 max-w-xl mx-auto auto-rows-fr">
         {% for page in section.pages %}
-        <div class="bg-white shadow-md rounded-lg p-4 border border-gray-200 hover:shadow-lg transition-shadow duration-300">
-            <h3><a href="{{ page.permalink | safe }}" 
-               class="text-blue-600 hover:text-blue-800 font-medium transition duration-300">
-                {{ page.title }}
-            </a></h3>
-            <p class="text-sm text-gray-600 mt-2">>&nbsp;{{ page.description }}</p>
+        <div class="bg-white shadow-md rounded-lg p-4 border border-gray-200 hover:shadow-lg transition-shadow duration-300 flex flex-col h-full">
+            <!-- Top section: title and description tightly grouped -->
+            <div>
+                <h3>
+                    <a href="{{ page.permalink | safe }}"
+                       class="text-blue-600 hover:text-blue-800 font-medium transition duration-300">
+                        {{ page.title }}
+                    </a>
+                </h3>
+                <p class="text-sm text-gray-600 mt-2">&gt;&nbsp;{{ page.description }}</p>
+            </div>
+
+            <div class="mt-auto"></div>
         </div>
         {% endfor %}
     </div>
