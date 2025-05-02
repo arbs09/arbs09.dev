@@ -32,12 +32,13 @@
   <meta name="twitter:description" content="{{ description }}" />
   <meta property="og:description" content="{{ description }}" />
 
-  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="shortcut icon" href="/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" href="{{ get_url(path="favicon-96x96.png", trailing_slash=false) }}" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="{{ get_url(path="favicon.svg", trailing_slash=false) }}" />
+  <link rel="shortcut icon" href="{{ get_url(path="favicon.ico", trailing_slash=false) }}" />
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ get_url(path="apple-touch-icon.png", trailing_slash=false) }}" />
   <meta name="apple-mobile-web-app-title" content="arbs09.dev" />
-  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="manifest" href="{{ get_url(path="site.webmanifest", trailing_slash=false) }}" />
+
   <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path="rss.xml", trailing_slash=false) }}">
   
   {% if is_404 or page.extra.hidden %}
