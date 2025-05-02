@@ -1,9 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <div class="min-h-screen flex items-center justify-center text-center">
-    <div class="container mx-auto px-4 sm:px-6 md:px-8 lg:px-32 xl:px-48 py-8">
-      <h1 class="text-center text-4xl font-bold">{{ title }}</h1>
-    </div>
+<div class="h-entry flex justify-center items-center min-h-screen">
+  <div class="container mx-auto px-4 sm:px-6 md:px-8 lg:px-32 xl:px-48 py-8">
+    <h1 class="p-name text-center text-3xl font-bold mt-5">
+      {{ title }}
+    </h1>
+    <hr class="border-t-2 border-gray-300 my-6 mx-auto w-1/2">
+    <article class="e-content prose lg:prose-lg py-8 mx-auto">
+      <p>This is my personal site. Here i post about my <a href="{{ get_url(path='@/projects/_index.md') }}">Projects</a> and sometimes in my <a href="{{ get_url(path='@/posts/_index.md') }}">Blog</a>. Also sometimes, I make some web tools (in German): <a href="{{ get_url(path='@/de/tools/_index.md') }}">Tools</a>.</p>
+    </article>
   </div>
+</div>
 {% endblock content %}
