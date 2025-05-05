@@ -19,6 +19,7 @@ jobs:
           sudo snap install zola --edge &
           sudo apt-get install minify sshpass -y &
           wait
+          
       - name: Install npm dependencies from package.json in parallel
         run: npm install & wait
 
