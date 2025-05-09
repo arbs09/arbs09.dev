@@ -19,7 +19,7 @@ Bots that ignore this rule are automatically reported to AbuseIPDB.
 
 If you want to check it out, it is available on Codeberg and Github. It is licensed under the MIT License.
 
-[Codeberg Repo](https://codeberg.org/arbs09/robotstxt-honeypot)
+[Codeberg Repo](https://codeberg.org/arbs09/robotstxt-honeypot), 
 [Github-Repo](https://github.com/arbs09/robotstxt-honeypot)
 
 [def]: https://en.wikipedia.org/wiki/Robots.txt
