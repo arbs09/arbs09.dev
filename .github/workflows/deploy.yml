@@ -46,6 +46,7 @@ jobs:
   deploy-main:
     needs: build
     runs-on: ubuntu-latest
+    environment: deploy
     steps:
       - name: Download built site
         uses: actions/download-artifact@v4
@@ -72,6 +73,7 @@ jobs:
   deploy-backup:
     needs: build
     runs-on: ubuntu-latest
+    environment: deploy
     steps:
       - name: Download built site
         uses: actions/download-artifact@v4
