@@ -1,4 +1,9 @@
 User-agent: *
 Disallow: /cdn-cgi/
 Allow: /
+
+User-agent: GPTBot
+User-Agent: ClaudeBot
+Disallow: /
+
 Sitemap: {{ get_url(path="sitemap.xml") }}
