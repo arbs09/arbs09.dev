@@ -1,9 +1,18 @@
 User-agent: *
+DisallowAITraining: /
+Content-Usage: ai=n
 Disallow: /cdn-cgi/
 Allow: /
 
 User-agent: GPTBot
 User-Agent: ClaudeBot
+User-Agent: CCBot
+User-Agent: Google-Extended
+User-Agent: Google-CloudVertexBot
+User-Agent: Applebot-Extended
+User-Agent: PerplexityBot
+User-Agent: ImagesiftBot
+User-Agent: Kangaroo Bot
 Disallow: /
 
 Sitemap: {{ get_url(path="sitemap.xml") }}
