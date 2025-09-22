@@ -3,7 +3,7 @@ title = "Gruppengenerator"
 description = "Erstelle zufällige Gruppen schnell und einfach."
 date = 2024-12-28
 template = "tools/groupgen.html"
-aliases = ["/tools/groupgen", "/de/werkezuge/gruppengenerator"]
+aliases = ["/tools/groupgen", "/de/werkzeuge/gruppengenerator/"]
 [extra]
 lang = "de"
 +++
