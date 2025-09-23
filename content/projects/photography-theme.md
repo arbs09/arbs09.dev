@@ -7,9 +7,9 @@ draft = false
 lang = "en"
 +++
 
-This is my photography theme, which I created for my photography Site ([simplesnap.de](https://simplesnap.de)).
+This is my photography theme, which I created for my photography site ([simplesnap.de](https://simplesnap.de)).
 
 Codeberg: [codeberg.org/arbs09/photography-theme](https://codeberg.org/arbs09/photography-theme)
 
-## Screenshot
+## screenshot
 ![](/img/photography-theme/screenshot.png)
