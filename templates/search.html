@@ -1,0 +1,110 @@
+<div class="relative">
+  <input
+    type="text"
+    id="search-box"
+    placeholder="Search..."
+    class="px-2 py-1 rounded bg-gray-600 text-gray-100 placeholder-gray-400 focus:outline-none focus:ring focus:ring-gray-400"
+  />
+
+  <div
+    id="results"
+    class="absolute left-0 mt-2 w-64 bg-gray-800 text-gray-100 rounded shadow-lg hidden z-50"
+  ></div>
+</div>
+
+<script src="/js/elasticlunr.min.js"></script>
+<script>
+  fetch("/search_index.en.json")
+    .then((res) => res.json())
+    .then((raw) => {
+      const index = elasticlunr.Index.load(
+        raw.index && raw.documentStore ? raw : raw.index ? raw.index : raw
+      );
+
+      const store =
+        (index.documentStore && index.documentStore.docs) ||
+        (raw.documentStore && raw.documentStore.docs) ||
+        {};
+      const docById = store;
+
+      const input = document.getElementById("search-box");
+      const resultsBox = document.getElementById("results");
+
+      function renderResults(results) {
+        resultsBox.innerHTML = "";
+
+        if (!results || results.length === 0) {
+          resultsBox.innerHTML =
+            '<div class="p-2 text-gray-400">No results found</div>';
+          resultsBox.classList.remove("hidden");
+          return;
+        }
+
+        results.forEach((r) => {
+          const item = docById[r.ref];
+          if (!item) return;
+
+          const url = item.id;
+          const title = item.title || url;
+
+          const el = document.createElement("a");
+          el.href = url;
+          el.className =
+            "block p-2 hover:bg-gray-700 cursor-pointer focus:bg-gray-700 focus:outline-none";
+          el.textContent = title;
+
+          resultsBox.appendChild(el);
+        });
+
+        resultsBox.classList.remove("hidden");
+      }
+
+      function runSearch(query) {
+        if (!query || !query.trim()) {
+          resultsBox.innerHTML = "";
+          resultsBox.classList.add("hidden");
+          return;
+        }
+        const results = index.search(query, { expand: true });
+        renderResults(results);
+      }
+
+      input.addEventListener("input", (e) => runSearch(e.target.value));
+      input.addEventListener("blur", () => {
+        setTimeout(() => resultsBox.classList.add("hidden"), 200);
+      });
+      input.addEventListener("focus", () => {
+        if (resultsBox.innerHTML.trim() !== "") {
+          resultsBox.classList.remove("hidden");
+        }
+      });
+
+      input.addEventListener("keydown", (e) => {
+        if (!["ArrowDown", "ArrowUp", "Enter"].includes(e.key)) return;
+        const items = Array.from(resultsBox.querySelectorAll("a"));
+        if (items.length === 0) return;
+
+        const activeIndex = items.findIndex(
+          (el) => el === document.activeElement
+        );
+
+        if (e.key === "ArrowDown") {
+          e.preventDefault();
+          const next = items[(activeIndex + 1) % items.length];
+          next.focus();
+        } else if (e.key === "ArrowUp") {
+          e.preventDefault();
+          const prev =
+            items[(activeIndex - 1 + items.length) % items.length];
+          prev.focus();
+        } else if (e.key === "Enter") {
+          if (activeIndex === -1) {
+            items[0].click();
+          }
+        }
+      });
+    })
+    .catch((err) => {
+      console.error("Failed to load search index:", err);
+    });
+</script>

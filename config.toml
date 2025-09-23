@@ -8,6 +8,9 @@ feed_filenames = ["rss.xml"]
 default_language = "en"
 author = "arbs09"
 
+[search]
+index_format = "elasticlunr_json"
+
 [markdown]
 highlight_code = true
 render_emoji = true
