@@ -1,6 +1,4 @@
 User-agent: *
-DisallowAITraining: /
-Content-Usage: ai=n
 Disallow: /cdn-cgi/
 Allow: /
 
