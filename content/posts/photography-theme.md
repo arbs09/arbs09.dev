@@ -16,4 +16,4 @@ Here are some Screenshots:
 
 I made it public on Codeberg: [codeberg.org/arbs09/photography-theme](https://codeberg.org/arbs09/photography-theme).
 
-Project page: [/projects/photography-theme/](/projects/photography-theme/)
+Project page: [/projects/photography-theme/](@/projects/photography-theme.md)
