@@ -11,5 +11,7 @@ This is my photography theme, which I created for my photography site ([simplesn
 
 Codeberg: [codeberg.org/arbs09/photography-theme](https://codeberg.org/arbs09/photography-theme)
 
+Blog Post: [here](@/posts/photography-theme.md)
+
 ## screenshot
 ![](/img/photography-theme/screenshot.png)
