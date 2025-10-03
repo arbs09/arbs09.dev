@@ -17,6 +17,7 @@
   <meta property="og:title" content="{{ title }}" />
   <meta name="twitter:title" content="{{ title }}" />
 
+  <link rel="preload" href="{{ get_url(path="style.css") | safe }}" as="style">
   <link rel="stylesheet" href="{{ get_url(path="style.css") | safe }}" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -65,6 +66,7 @@
   {% block structured_data %}{% endblock %}
 
   <script defer src="https://analytics.getroot.eu/script.js" data-website-id="5408385e-42df-45db-8b70-9bd61b364efa" data-do-not-track="true"></script>
+  <script src="{{ get_url(path="js/elasticlunr.min.js") | safe }}" defer></script>
 </head>
 
 <body class="bg-gray-200">
