@@ -62,7 +62,7 @@ jobs:
         env:
           DEPLOY_SERVER: ${{ secrets.DEPLOY_SERVER }}
 
-      - name: Deploy the website to backup server
+      - name: Deploy the website to static server
         run: |
           sshpass -p "$DEPLOY_PASSWORD" rsync -avx -e 'ssh -T' --delete --exclude '.ssh' ready/ $DEPLOY_USERNAME@$DEPLOY_SERVER:./
         env:
