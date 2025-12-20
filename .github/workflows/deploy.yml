@@ -43,7 +43,7 @@ jobs:
           name: build-artifact
           path: ready/
 
-  deploy to static:
+  deploy_to_static:
     needs: build
     runs-on: ubuntu-latest
     environment: deploy
