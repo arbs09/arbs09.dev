@@ -9,9 +9,12 @@
     {% if page.date %}<p class="dt-published text-center mt-2">{{ page.date }}</p>{% endif %}
     <a class="u-url" href="{{ page.permalink }}"></a>
     <hr class="border-t-2 border-gray-300 my-6 mx-auto w-1/2">
+    <article class="e-content prose lg:prose-lg pt-4 pb-8 mx-auto">
+      {{ page.content | safe }}
+    </article>
     {% set page_title = page.title | urlencode %}
     {% set page_url = page.permalink | urlencode %}
-    <div id="social-share" class="mx-auto flex w-fit items-center gap-6 rounded-full bg-gray-700 px-6 py-3">
+    <div id="social-share" class="mx-auto flex w-fit items-center gap-6 rounded-full bg-gray-700 px-4 py-3">
       <a id="bluesky-share-link" href="https://bsky.app/intent/compose?text={{ page_title }}%20{{ page_url }}" target="_blank" rel="noopener noreferrer">
         <img src="{{ get_url(path="icons/bluesky.svg", trailing_slash=false) }}" alt="bluesky" class="h-6 w-auto transition-transform transform hover:scale-110">
       </a>
@@ -19,9 +22,6 @@
         <img src="{{ get_url(path="icons/email.svg", trailing_slash=false) }}" alt="email" class="h-6 w-auto transition-transform transform hover:scale-110">
       </a>
     </div>
-    <article class="e-content prose lg:prose-lg pt-4 pb-8 mx-auto">
-      {{ page.content | safe }}
-    </article>
     <!--<script defer src="https://comments.arbs09.dev/js/commento.js"></script>
     <div id="commento"></div>
     <noscript>
