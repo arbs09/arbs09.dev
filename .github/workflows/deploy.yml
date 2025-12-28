@@ -55,7 +55,7 @@ jobs:
           path: ready/
 
       - name: Install sshpass
-        run: sudo apt-get install minify sshpass -y
+        run: sudo apt-get install sshpass -y
 
       - name: Set up SSH known hosts
         run: |
