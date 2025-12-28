@@ -16,10 +16,10 @@ jobs:
         with:
           submodules: true
 
-      - name: Install Node.js, Zola, Minify, and sshpass in parallel
+      - name: Install Node.js, Zola and Minify in parallel
         run: |
           sudo snap install zola --edge &
-          sudo apt-get install minify sshpass -y &
+          sudo apt-get install minify -y &
           wait
           
       - name: Install npm dependencies from package.json
@@ -35,7 +35,7 @@ jobs:
         run: zola build
 
       - name: Minify site
-        run: minify -r -a -s -v -o ready/ --html-keep-quotes --html-keep-document-tags --js-keep-var-names public/
+        run: minify -r -a -s -v -o ready/ --js-keep-var-names public/
 
       - name: Upload built site
         uses: actions/upload-artifact@v6
@@ -53,6 +53,9 @@ jobs:
         with:
           name: build-artifact
           path: ready/
+
+      - name: Install sshpass
+        run: sudo apt-get install minify sshpass -y
 
       - name: Set up SSH known hosts
         run: |
