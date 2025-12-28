@@ -79,4 +79,35 @@
   {% include "footer.html" %}
 </body>
 
+<script>
+setTimeout(() => {
+  const url = new URL(window.location.href);
+
+  const utmParams = [
+    'utm_source',
+    'utm_medium',
+    'utm_campaign',
+    'utm_term',
+    'utm_content'
+  ];
+
+  let modified = false;
+
+  utmParams.forEach(param => {
+    if (url.searchParams.has(param)) {
+      url.searchParams.delete(param);
+      modified = true;
+    }
+  });
+
+  if (modified) {
+    window.history.replaceState(
+      {},
+      document.title,
+      url.pathname + url.search + url.hash
+    );
+  }
+}, 500);
+</script>
+
 </html>
