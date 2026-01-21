@@ -12,7 +12,6 @@ author = "arbs09"
 index_format = "elasticlunr_json"
 
 [markdown]
-highlight_code = true
 render_emoji = true
 
 [link_checker]
