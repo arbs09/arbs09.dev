@@ -22,11 +22,10 @@
         <img src="{{ get_url(path="icons/email.svg", trailing_slash=false) }}" alt="email" class="h-6 w-auto transition-transform transform hover:scale-110">
       </a>
     </div>
-    <!--<script defer src="https://comments.arbs09.dev/js/commento.js"></script>
-    <div id="commento"></div>
     <noscript>
       <p class="text-center text-sm text-gray-500">Please enable JavaScript to view the comments.</p>
-    </noscript>-->
+    </noscript>
+      {% include "partials/comments.html" %}
   </div>
 </div>
 {% endblock content %}
