@@ -42,9 +42,9 @@
   <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path="rss.xml", trailing_slash=false) }}">
   
   {% if is_404 or page.extra.hidden %}
-  <meta name="robots" content="noindex, follow" />
+  <meta name="robots" content="noindex, follow, noai, noimageai" />
   {% else %}
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content="index, follow, noai, noimageai" />
   {% endif %}
 
   {% if current_url %}
